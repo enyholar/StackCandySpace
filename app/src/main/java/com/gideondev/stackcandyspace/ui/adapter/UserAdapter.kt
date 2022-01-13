@@ -1,7 +1,6 @@
 package com.gideondev.stackcandyspace.ui.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.gideondev.stackcandyspace.databinding.ItemUserLayoutBinding
@@ -49,18 +48,16 @@ class UserAdapter(
         position: Int
     ) {
         val model: User? = items[position]
-        holder.itemView .setOnClickListener(View.OnClickListener {
+        holder.itemView .setOnClickListener {
             listner.onItemClick(model, position)
-        })
+        }
         holder.bind(model)
     }
 
-    inner class ViewHolder(val binding: ItemUserLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemUserLayoutBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: User?) {
-            with(binding) {
-                binding.txtDisplayName.text = item?.displayName
-                binding.txtUserId.text = item?.userId.toString()
-            }
+            binding.txtDisplayName.text = item?.displayName
+            binding.txtUserId.text = item?.userId.toString()
         }
 
     }

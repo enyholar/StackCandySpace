@@ -20,8 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
-    private var userList: MutableList<User?> = ArrayList<User?>()
+    private lateinit var binding: ActivityMainBinding
+    private var userList: MutableList<User?> = ArrayList()
     private lateinit var userAdapter: UserAdapter
     private lateinit var  viewModel: SearchUserViewModel
 
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun initView(){
+    private fun initView(){
         binding.toolbarMain.title = getString(R.string.app_name)
         binding.btnSearch.setOnClickListener{
             val query = binding.edtSearch.text.toString()
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.searchForUser(query)
     }
 
-    fun observeData() {
+    private fun observeData() {
         viewModel.uiStateLiveData.observe(this) { state ->
             when (state) {
                 is LoadingState -> {

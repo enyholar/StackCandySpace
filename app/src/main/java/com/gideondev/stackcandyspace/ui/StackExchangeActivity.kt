@@ -14,7 +14,7 @@ import java.util.*
 
 class StackExchangeActivity : AppCompatActivity() {
     lateinit var user : User
-    lateinit var binding: ActivityStackExchangeBinding
+    private lateinit var binding: ActivityStackExchangeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_stack_exchange)

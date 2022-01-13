@@ -38,15 +38,15 @@ class StackExchangeCandySpaceRepositoryImpl @Inject constructor(
                 // handle the case when the API request gets an error response.
                 // e.g. internal server error.
             }.onErrorSuspend {
-                emit(ApiDataState.error<SearchUserResponse>(message()))
+                emit(ApiDataState.error(message()))
 
                 // handle the case when the API request gets an exception response.
                 // e.g. network connection error.
             }.onExceptionSuspend {
                 if (this.exception is IOException) {
-                    emit(ApiDataState.error<SearchUserResponse>(stringUtils.noNetworkErrorMessage()))
+                    emit(ApiDataState.error(stringUtils.noNetworkErrorMessage()))
                 } else {
-                    emit(ApiDataState.error<SearchUserResponse>(stringUtils.somethingWentWrong()))
+                    emit(ApiDataState.error(stringUtils.somethingWentWrong()))
                 }
             }
         }

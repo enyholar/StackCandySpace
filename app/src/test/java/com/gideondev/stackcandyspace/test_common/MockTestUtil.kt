@@ -15,7 +15,7 @@ class MockTestUtil {
                 )
         }
 
-        fun createUser(count: Int): List<User> {
+        private fun createUser(count: Int): List<User> {
             return (0 until count).map {
                 User(
                     accountId = 53121,
@@ -29,7 +29,7 @@ class MockTestUtil {
             }
         }
 
-        fun createUserBadgeCount(): BadgeCounts {
+        private fun createUserBadgeCount(): BadgeCounts {
             return BadgeCounts(
                 silver = 99,
                 bronze = 146,

@@ -25,10 +25,6 @@ class SearchUserViewModel @Inject constructor(
     var searchUserResponseLiveData: LiveData<SearchUserResponse> = _searchUserResponse
     private var searchQuery: String = ""
 
-    init {
-
-    }
-
 
     fun retry() {
         searchUser(searchQuery)
@@ -46,7 +42,6 @@ class SearchUserViewModel @Inject constructor(
             searchForUserUsecase(query).collect { dataState ->
                 when (dataState) {
                     is ApiDataState.Success -> {
-                            // First page
                             _uiState.postValue(ContentState)
                             _searchUserResponse.postValue(dataState.data!!)
                     }

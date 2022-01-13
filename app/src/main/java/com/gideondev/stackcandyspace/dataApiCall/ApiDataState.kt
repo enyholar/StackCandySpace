@@ -9,7 +9,7 @@ sealed class ApiDataState<T> {
     data class Error<T>(val message: String) : ApiDataState<T>()
 
     companion object {
-        fun <T> success(data: T) = Success<T>(data)
+        fun <T> success(data: T) = Success(data)
         fun <T> error(message: String) = Error<T>(message)
     }
 }
