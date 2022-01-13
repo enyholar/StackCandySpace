@@ -32,7 +32,7 @@ import org.junit.runners.JUnit4
 import retrofit2.Response
 
 @RunWith(JUnit4::class)
-class ImagineRepositoryTest {
+class StackExchangeCandySpaceRepositoryImplTest {
 
     // Subject under test
     private lateinit var repository: StackExchangeCandySpaceRepositoryImpl

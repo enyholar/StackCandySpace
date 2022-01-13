@@ -57,11 +57,12 @@ class StackExchangeCandySpaceViewModelTest {
         val searchedUsersObserver = mockk<Observer<SearchUserResponse>>(relaxed = true)
 
         // When
-        coEvery { searchUserUsecase.invoke(any(), any(), any(), any()) }
+        coEvery { searchUserUsecase.invoke(any(), any(), any(),any()) }
             .returns(flowOf(ApiDataState.success(givenSearchedUser)))
 
         // Invoke
         viewModel = SearchUserViewModel(searchUserUsecase)
+        viewModel.testSearchUserMethod()
         viewModel.uiStateLiveData.observeForever(uiObserver)
         viewModel.searchUserResponseLiveData.observeForever(searchedUsersObserver)
 

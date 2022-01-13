@@ -25,9 +25,12 @@ class SearchUserViewModel @Inject constructor(
     var searchUserResponseLiveData: LiveData<SearchUserResponse> = _searchUserResponse
     private var searchQuery: String = ""
 
-
     fun retry() {
         searchUser(searchQuery)
+    }
+
+    fun testSearchUserMethod() {
+        searchUser("")
     }
 
     fun searchForUser(query: String) {
