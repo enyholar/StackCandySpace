@@ -23,12 +23,10 @@ class SearchUserViewModel @Inject constructor(
 
     private var _searchUserResponse = MutableLiveData<SearchUserResponse>()
     var searchUserResponseLiveData: LiveData<SearchUserResponse> = _searchUserResponse
-
-    private var pageNumber = 1
     private var searchQuery: String = ""
 
     init {
-        searchUser("")
+
     }
 
 

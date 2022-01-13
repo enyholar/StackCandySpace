@@ -1,5 +1,6 @@
 package com.gideondev.stackcandyspace.model
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
 data class User(
@@ -63,4 +64,4 @@ data class User(
 
     @field:SerializedName("reputation_change_month")
     val reputationChangeMonth: Int? = null
-)
+) : Serializable

@@ -1,6 +1,7 @@
 package com.gideondev.stackcandyspace.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class BadgeCounts(
 
@@ -12,4 +13,9 @@ data class BadgeCounts(
 
     @field:SerializedName("bronze")
     val bronze: Int? = null
-)
+
+): Serializable {
+    override fun toString(): String {
+        return "gold=$gold, silver=$silver, bronze=$bronze"
+    }
+}

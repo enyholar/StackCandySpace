@@ -1,6 +1,13 @@
 <resources>
-    <string name="app_name">StackCandySpace</string>
+    <string name="app_name">StackExchange</string>
     <string name="action_retry_str">Retry</string>
     <string name="message_no_network_connected_str">No network connected!</string>
     <string name="message_something_went_wrong_str">Something went wrong!</string>
+    <string name="user_name">User Name:</string>
+    <string name="top_tags">Top Tags:</string>
+    <string name="badges">Badges:</string>
+    <string name="locations">Locations:</string>
+    <string name="creation_date">Creation Date:</string>
+    <string name="details">Details</string>
+    <string name="search">Search</string>
 </resources>

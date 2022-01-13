@@ -15,7 +15,7 @@ data class SearchUserResponse(
 	val hasMore: Boolean? = null,
 
 	@field:SerializedName("items")
-	val items: List<User?>? = null
+	var items: List<User?>? = null
 )
 
 
